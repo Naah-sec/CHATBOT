@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chatbot_demo:/app/chatbot_demo
+      - ./requirements.txt:/app/requirements.txt
+    environment:
+      - DJANGO_SETTINGS_MODULE=chatbot_demo.settings
+    depends_on:
+      - ollama
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    working_dir: /frontend
+    command: ["npm", "run", "preview"]
+    depends_on:
+      - backend
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_MODELS=llama3
+
+volumes:
+  ollama_data:
