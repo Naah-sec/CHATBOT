@@ -2,7 +2,7 @@
 
 This project is a full-stack, privacy-first chatbot system that runs entirely on your machine. It features a modern React frontend and a Django REST Framework backend, powered by a local llama3 LLM via Ollama. The chatbot remembers your conversation context and provides a beautiful, responsive chat experience.
 
-> **This project was fully built and iteratively improved by the GitHub Copilot agent as a real-world test of its coding and reasoning abilities. All requirements were met, and the system works as intended.**
+> **You might say what would i do with it i could just use that local llm via Open-webUI interface or ...,yes! you can totally do that,this project was made for practicing chatbot integration with some memory,streaming.. and This project was fully built and iteratively improved by the GitHub Copilot agent as a real-world test of its coding and reasoning abilities. All requirements were met, and the system works as intended.**
 
 ---
 
